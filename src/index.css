@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0a0a0b;
+    color: #f1f5f9;
+    font-family: 'Chakra Petch', sans-serif;
+    user-select: none;
+    overflow-x: hidden;
+  }
+}
+
+.bg-radial-immersive {
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0b 100%);
+}
+
+.font-arcade {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-heading {
+  font-family: 'Teko', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-tech {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Retro CRT & Scanline effect */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 26, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 255, 0, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+.arcade-text-glow {
+  text-shadow: 0 0 10px rgba(255, 78, 0, 0.8), 0 0 25px rgba(242, 125, 38, 0.5);
+}
+
+.arcade-cyan-glow {
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.8), 0 0 25px rgba(0, 242, 255, 0.5);
+}
+
+.arcade-red-glow {
+  text-shadow: 0 0 10px rgba(255, 50, 80, 0.8), 0 0 22px rgba(255, 0, 40, 0.5);
+}
+
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 78, 0, 0.5);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+/* Custom Pixelated Rendering for Canvas */
+.pixelated {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Custom animated background grid */
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+.retro-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  animation: gridMove 20s linear infinite;
+}
+
